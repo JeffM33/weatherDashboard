@@ -1,0 +1,6 @@
+.gridLayout:nth-child(){
+    margin: 10 px;
+    border: solid black 2px;
+    padding: 5px;
+
+}
