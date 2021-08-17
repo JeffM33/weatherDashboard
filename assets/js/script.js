@@ -39,8 +39,6 @@ function getWeather(lat, lon) {
         .then(headers => headers.json())
         .then(weatherData => {
             console.log(weatherData);
-            // temp.setAttribute("value", weatherData.current.temp);
-            // wind.setAttribute("value", weatherData.current.temp);
             var card = document.createElement("div");
             var cardBody = document.createElement("div");
             var cityName = document.createElement("h3");
@@ -66,23 +64,22 @@ function getWeather(lat, lon) {
 
 }
 
-
-
-// document.getElementById("myBtn").addEventListener("click", function() {
-//     city = document.getElementById("");
-//     if(city === "dallas") {
-//         // call api to fill out different variables and return them
-//     } else if(city === "austin"){
-//         // call api to fill out different variables and return them
-//     } else if(city === "houston"){
-//         // call api to fill out different variables and return them
-//     } else if(city === "sanAntonio"){
-//         // call api to fill out different variables and return them
-//     } else if(city === "oklahomaCity"){
-//         // call api to fill out different variables and return them
-//     } else if(city === "durant"){
-//         // call api to fill out different variables and return them
-//     } 
-
-//     return; 
-//   });
+// created standard buttons to call certain cities
+document.getElementById("dallas").addEventListener("click", function() {
+    getCords("dallas");
+}); 
+document.getElementById("austin").addEventListener("click", function() {
+    getCords("austin");
+}); 
+document.getElementById("houston").addEventListener("click", function() {
+    getCords("houston");
+}); 
+document.getElementById("sanAntonio").addEventListener("click", function() {
+    getCords("San Antonio");
+}); 
+document.getElementById("oklahomaCity").addEventListener("click", function() {
+    getCords("Oklahoma City");
+}); 
+document.getElementById("durant").addEventListener("click", function() {
+    getCords("Durant");
+}); 
