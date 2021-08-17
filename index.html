@@ -19,36 +19,59 @@
 
     <main>
         <!-- Creating left side navbar for searching -->
-        <row class="form-group row">
+        <row class="form-group cityRow">
             <column class="col gridLayout">
                 <section>
                     <h2>Search for a City:</h2>
                 </section>
                 <section>
-                        <input type="searchBar" class="form-control" id="city" placeholder="City">
+                        <input type="searchBar" class="form-control-sm" id="cityInput" placeholder="City">
+                        <button type="submit" class="btn btn-secondary" id="searchButton">search</button>
                 </section>
                 <section>
                     
                 </section>
                 <section>
-                    <button type="button" class="btn btn-secondary">Dallas</button>
+                    <button type="button" class="btn btn-secondary" id="dallas">Dallas</button>
                 </section>
                 <section>
-                    <button type="button" class="btn btn-secondary">Austin</button>
+                    <button type="button" class="btn btn-secondary" id="austin">Austin</button>
                 </section>
                 <section>
-                    <button type="button" class="btn btn-secondary">Houston</button>
+                    <button type="button" class="btn btn-secondary" id="houston">Houston</button>
                 </section>
                 <section>
-                    <button type="button" class="btn btn-secondary">San Antonio</button>
+                    <button type="button" class="btn btn-secondary" id="sanAntonio">San Antonio</button>
                 </section>
                 <section>
-                    <button type="button" class="btn btn-secondary">Oklahoma City</button>
+                    <button type="button" class="btn btn-secondary" id="oklahomaCity">Oklahoma City</button>
                 </section>
                 <section>
-                    <button type="button" class="btn btn-secondary">Durant</button>
+                    <button type="button" class="btn btn-secondary" id="Durant">Durant</button>
                 </section>
             </column>
+        </row>
+
+        <row class="row">
+            <div class="row col-12">
+                <span id="city"></span>
+            </div>
+            <div class="row col-12">
+                <span id="date"></span>
+            </div>
+            <div class="row col-12">
+                <span id="temp"></span>
+            </div>
+            <div class="row col-12">
+                <span id="humidity"></span>
+            </div>
+            <div class="row col-12">
+                <span id="windSpeed"></span>
+            </div>
+            <div class="row col-12">
+                <span id="uvIndex"></span>
+            </div>
+            
         </row>
     </main>
 
