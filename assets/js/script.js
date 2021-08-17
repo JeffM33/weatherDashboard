@@ -51,10 +51,10 @@ function getWeather(lat, lon) {
             card.setAttribute("class", "card");
             cardBody.setAttribute("class", "card-body");
 
-            temp.textContent = `temp: ${weatherData.current.temp}`;
-            wind.textContent = `temp: ${weatherData.current.wind_speed}`;
-            humid.textContent = `temp: ${weatherData.current.humidity}`;
-            uv.textContent = `temp: ${weatherData.current.uvi}`;
+            temp.textContent = `Temp: ${weatherData.current.temp}`;
+            wind.textContent = `Wind speed: ${weatherData.current.wind_speed}`;
+            humid.textContent = `Humidity: ${weatherData.current.humidity}`;
+            uv.textContent = `UV Index: ${weatherData.current.uvi}`;
             
             // Make sure everything is appended
             card.append(cardBody);
