@@ -25,13 +25,7 @@ function searchB(){
 
 function getCords(cityInput){
     let queryUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityInput}&units=imperial&appid=${apiKey}`
-    var card = document.createElement("div");
-    var cardBody = document.createElement("div");
-    var cityName = document.createElement("h3");
-    var temp = document.createElement("p");
-    var wind = document.createElement("p");
-    var humid = document.createElement("p");
-    var uv = document.createElement("p");
+    
 
     fetch(queryUrl)
     .then(headers => headers.json())
@@ -40,8 +34,15 @@ function getCords(cityInput){
         getWeather(weatherData.city.coord.lat, weatherData.city.coord.lon);
     })
 
-    for(i = 10; i > 34 ; i + 8){
-        if (i === 10) {
+    for(i = 2; i > 34 ; i + 8){
+        var card = document.createElement("div");
+        var cardBody = document.createElement("div");
+        var cityName = document.createElement("h3");
+        var temp = document.createElement("p");
+        var wind = document.createElement("p");
+        var humid = document.createElement("p");
+        var uv = document.createElement("p");
+        if (i === 2) {
             card.setAttribute("class", "card");
             cardBody.setAttribute("class", "card-body");
 
@@ -55,7 +56,7 @@ function getCords(cityInput){
             day2.innerHTML = "";
             day2.append(card);
 
-        } else if (i === 18) {
+        } else if (i === 10) {
             card.setAttribute("class", "card");
             cardBody.setAttribute("class", "card-body");
 
@@ -69,7 +70,7 @@ function getCords(cityInput){
             day3.innerHTML = "";
             day3.append(card);
 
-        } else if (i === 26) {
+        } else if (i === 18) {
             card.setAttribute("class", "card");
             cardBody.setAttribute("class", "card-body");
 
@@ -83,7 +84,7 @@ function getCords(cityInput){
             day4.innerHTML = "";
             day4.append(card);
 
-        } else {
+        } else if (i === 26) {
             card.setAttribute("class", "card");
             cardBody.setAttribute("class", "card-body");
 
@@ -97,6 +98,19 @@ function getCords(cityInput){
             day5.innerHTML = "";
             day5.append(card);
 
+        } else {
+            card.setAttribute("class", "card");
+            cardBody.setAttribute("class", "card-body");
+
+            temp.textContent = `City Name: ${weatherData.cityName}`;
+            temp.textContent = `Temp: ${weatherData.list[i].main.temp}`;
+            wind.textContent = `Wind speed: ${weatherData.list[i].wind.speed}`;
+            humid.textContent = `Humidity: ${weatherData.list[i].main.humidity}`;
+
+            card.append(cardBody);
+            cardBody.append(cityName, temp, wind, humid);
+            day6.innerHTML = "";
+            day6.append(card);
         }
     }
 

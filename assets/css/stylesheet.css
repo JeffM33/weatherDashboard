@@ -1,15 +1,8 @@
-.gridLayout:nth-child(){
-    margin: 10 px;
-    border: solid black 2px;
-    padding: 5px;
-    width: 25px;
-}
-
 .row {
     border: solid black 2px;
     display: flex;
     justify-content: center;
-    width: 50%;
+    /* width: 50%; */
 }
 
 .cityRow {
