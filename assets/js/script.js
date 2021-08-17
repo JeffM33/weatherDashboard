@@ -24,14 +24,81 @@ function searchB(){
 }
 
 function getCords(cityInput){
-    let queryUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityInput}&appid=${apiKey}`
+    let queryUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityInput}&units=imperial&appid=${apiKey}`
+    var card = document.createElement("div");
+    var cardBody = document.createElement("div");
+    var cityName = document.createElement("h3");
+    var temp = document.createElement("p");
+    var wind = document.createElement("p");
+    var humid = document.createElement("p");
+    var uv = document.createElement("p");
 
     fetch(queryUrl)
     .then(headers => headers.json())
     .then(weatherData => {
-        //console.log(weatherData);
+        console.log(weatherData);
         getWeather(weatherData.city.coord.lat, weatherData.city.coord.lon);
     })
+
+    for(i = 10; i > 34 ; i + 8){
+        if (i === 10) {
+            card.setAttribute("class", "card");
+            cardBody.setAttribute("class", "card-body");
+
+            temp.textContent = `City Name: ${weatherData.cityName}`;
+            temp.textContent = `Temp: ${weatherData.list[i].main.temp}`;
+            wind.textContent = `Wind speed: ${weatherData.list[i].wind.speed}`;
+            humid.textContent = `Humidity: ${weatherData.list[i].main.humidity}`;
+
+            card.append(cardBody);
+            cardBody.append(cityName, temp, wind, humid);
+            day2.innerHTML = "";
+            day2.append(card);
+
+        } else if (i === 18) {
+            card.setAttribute("class", "card");
+            cardBody.setAttribute("class", "card-body");
+
+            temp.textContent = `City Name: ${weatherData.cityName}`;
+            temp.textContent = `Temp: ${weatherData.list[i].main.temp}`;
+            wind.textContent = `Wind speed: ${weatherData.list[i].wind.speed}`;
+            humid.textContent = `Humidity: ${weatherData.list[i].main.humidity}`;
+
+            card.append(cardBody);
+            cardBody.append(cityName, temp, wind, humid);
+            day3.innerHTML = "";
+            day3.append(card);
+
+        } else if (i === 26) {
+            card.setAttribute("class", "card");
+            cardBody.setAttribute("class", "card-body");
+
+            temp.textContent = `City Name: ${weatherData.cityName}`;
+            temp.textContent = `Temp: ${weatherData.list[i].main.temp}`;
+            wind.textContent = `Wind speed: ${weatherData.list[i].wind.speed}`;
+            humid.textContent = `Humidity: ${weatherData.list[i].main.humidity}`;
+
+            card.append(cardBody);
+            cardBody.append(cityName, temp, wind, humid);
+            day4.innerHTML = "";
+            day4.append(card);
+
+        } else {
+            card.setAttribute("class", "card");
+            cardBody.setAttribute("class", "card-body");
+
+            temp.textContent = `City Name: ${weatherData.cityName}`;
+            temp.textContent = `Temp: ${weatherData.list[i].main.temp}`;
+            wind.textContent = `Wind speed: ${weatherData.list[i].wind.speed}`;
+            humid.textContent = `Humidity: ${weatherData.list[i].main.humidity}`;
+
+            card.append(cardBody);
+            cardBody.append(cityName, temp, wind, humid);
+            day5.innerHTML = "";
+            day5.append(card);
+
+        }
+    }
 
 }
 
@@ -53,6 +120,7 @@ function getWeather(lat, lon) {
             card.setAttribute("class", "card");
             cardBody.setAttribute("class", "card-body");
 
+            temp.textContent = `City Name: ${weatherData.current.cityName}`;
             temp.textContent = `Temp: ${weatherData.current.temp}`;
             wind.textContent = `Wind speed: ${weatherData.current.wind_speed}`;
             humid.textContent = `Humidity: ${weatherData.current.humidity}`;
@@ -60,13 +128,14 @@ function getWeather(lat, lon) {
             
             // Make sure everything is appended
             card.append(cardBody);
-            cardBody.append(temp, wind, humid, uv);
+            cardBody.append(cityName, temp, wind, humid, uv);
             day1.innerHTML = "";
             day1.append(card);
 
     })
 
 }
+
 
 // created standard buttons to call certain cities
 document.getElementById("dallas").addEventListener("click", function() {
