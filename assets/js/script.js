@@ -6,6 +6,10 @@ let humidity = document.getElementById("humidity");
 let windSpeed = document.getElementById("windSpeed");
 let uvIndex = document.getElementById("uvIndex");
 let day1 = document.getElementById("day1");
+let day2 =document.getElementById("day2");
+let day3 =document.getElementById("day3");
+let day4 =document.getElementById("day4");
+let day5 =document.getElementById("day5");
 
 var searchButton = document.getElementById("searchButton");
 

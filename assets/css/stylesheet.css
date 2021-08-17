@@ -28,3 +28,13 @@
     border: solid black 2px;
     color: white;
 } 
+
+.container {
+    align-items: center;
+    border: solid black 2px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 500px;
+}
