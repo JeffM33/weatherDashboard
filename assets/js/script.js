@@ -32,87 +32,90 @@ function getCords(cityInput){
     .then(weatherData => {
         console.log(weatherData);
         getWeather(weatherData.city.coord.lat, weatherData.city.coord.lon);
+        populateForecast(weatherData);
     })
 
-    for(i = 2; i > 34 ; i + 8){
-        var card = document.createElement("div");
-        var cardBody = document.createElement("div");
-        var cityName = document.createElement("h3");
-        var temp = document.createElement("p");
-        var wind = document.createElement("p");
-        var humid = document.createElement("p");
-        var uv = document.createElement("p");
-        if (i === 2) {
-            card.setAttribute("class", "card");
-            cardBody.setAttribute("class", "card-body");
+    function populateForecast(weatherData){
+        for(i = 2; i < 34 ; i += 8){
+            var card = document.createElement("div");
+            var cardBody = document.createElement("div");
+            var cityName = document.createElement("h3");
+            var temp = document.createElement("p");
+            var wind = document.createElement("p");
+            var humid = document.createElement("p");
 
-            temp.textContent = `City Name: ${weatherData.cityName}`;
-            temp.textContent = `Temp: ${weatherData.list[i].main.temp}`;
-            wind.textContent = `Wind speed: ${weatherData.list[i].wind.speed}`;
-            humid.textContent = `Humidity: ${weatherData.list[i].main.humidity}`;
+            if (i === 2 ) {
+                card.setAttribute("class", "card");
+                cardBody.setAttribute("class", "card-body");
 
-            card.append(cardBody);
-            cardBody.append(cityName, temp, wind, humid);
-            day2.innerHTML = "";
-            day2.append(card);
+                temp.textContent = `City Name: ${weatherData.cityName}`;
+                temp.textContent = `Temp: ${weatherData.list[i].main.temp}`;
+                wind.textContent = `Wind speed: ${weatherData.list[i].wind.speed}`;
+                humid.textContent = `Humidity: ${weatherData.list[i].main.humidity}`;
 
-        } else if (i === 10) {
-            card.setAttribute("class", "card");
-            cardBody.setAttribute("class", "card-body");
+                card.append(cardBody);
+                cardBody.append(cityName, temp, wind, humid);
+                day2.innerHTML = "";
+                day2.append(card);
 
-            temp.textContent = `City Name: ${weatherData.cityName}`;
-            temp.textContent = `Temp: ${weatherData.list[i].main.temp}`;
-            wind.textContent = `Wind speed: ${weatherData.list[i].wind.speed}`;
-            humid.textContent = `Humidity: ${weatherData.list[i].main.humidity}`;
+            } else if (i === 10) {
+                card.setAttribute("class", "card");
+                cardBody.setAttribute("class", "card-body");
 
-            card.append(cardBody);
-            cardBody.append(cityName, temp, wind, humid);
-            day3.innerHTML = "";
-            day3.append(card);
+                temp.textContent = `City Name: ${weatherData.cityName}`;
+                temp.textContent = `Temp: ${weatherData.list[i].main.temp}`;
+                wind.textContent = `Wind speed: ${weatherData.list[i].wind.speed}`;
+                humid.textContent = `Humidity: ${weatherData.list[i].main.humidity}`;
 
-        } else if (i === 18) {
-            card.setAttribute("class", "card");
-            cardBody.setAttribute("class", "card-body");
+                card.append(cardBody);
+                cardBody.append(cityName, temp, wind, humid);
+                day3.innerHTML = "";
+                day3.append(card);
 
-            temp.textContent = `City Name: ${weatherData.cityName}`;
-            temp.textContent = `Temp: ${weatherData.list[i].main.temp}`;
-            wind.textContent = `Wind speed: ${weatherData.list[i].wind.speed}`;
-            humid.textContent = `Humidity: ${weatherData.list[i].main.humidity}`;
+            } else if (i === 18) {
+                card.setAttribute("class", "card");
+                cardBody.setAttribute("class", "card-body");
 
-            card.append(cardBody);
-            cardBody.append(cityName, temp, wind, humid);
-            day4.innerHTML = "";
-            day4.append(card);
+                temp.textContent = `City Name: ${weatherData.cityName}`;
+                temp.textContent = `Temp: ${weatherData.list[i].main.temp}`;
+                wind.textContent = `Wind speed: ${weatherData.list[i].wind.speed}`;
+                humid.textContent = `Humidity: ${weatherData.list[i].main.humidity}`;
 
-        } else if (i === 26) {
-            card.setAttribute("class", "card");
-            cardBody.setAttribute("class", "card-body");
+                card.append(cardBody);
+                cardBody.append(cityName, temp, wind, humid);
+                day4.innerHTML = "";
+                day4.append(card);
 
-            temp.textContent = `City Name: ${weatherData.cityName}`;
-            temp.textContent = `Temp: ${weatherData.list[i].main.temp}`;
-            wind.textContent = `Wind speed: ${weatherData.list[i].wind.speed}`;
-            humid.textContent = `Humidity: ${weatherData.list[i].main.humidity}`;
+            } else if (i === 26) {
+                card.setAttribute("class", "card");
+                cardBody.setAttribute("class", "card-body");
 
-            card.append(cardBody);
-            cardBody.append(cityName, temp, wind, humid);
-            day5.innerHTML = "";
-            day5.append(card);
+                temp.textContent = `City Name: ${weatherData.cityName}`;
+                temp.textContent = `Temp: ${weatherData.list[i].main.temp}`;
+                wind.textContent = `Wind speed: ${weatherData.list[i].wind.speed}`;
+                humid.textContent = `Humidity: ${weatherData.list[i].main.humidity}`;
 
-        } else {
-            card.setAttribute("class", "card");
-            cardBody.setAttribute("class", "card-body");
+                card.append(cardBody);
+                cardBody.append(cityName, temp, wind, humid);
+                day5.innerHTML = "";
+                day5.append(card);
 
-            temp.textContent = `City Name: ${weatherData.cityName}`;
-            temp.textContent = `Temp: ${weatherData.list[i].main.temp}`;
-            wind.textContent = `Wind speed: ${weatherData.list[i].wind.speed}`;
-            humid.textContent = `Humidity: ${weatherData.list[i].main.humidity}`;
+            } else {
+                card.setAttribute("class", "card");
+                cardBody.setAttribute("class", "card-body");
 
-            card.append(cardBody);
-            cardBody.append(cityName, temp, wind, humid);
-            day6.innerHTML = "";
-            day6.append(card);
+                temp.textContent = `City Name: ${weatherData.cityName}`;
+                temp.textContent = `Temp: ${weatherData.list[i].main.temp}`;
+                wind.textContent = `Wind speed: ${weatherData.list[i].wind.speed}`;
+                humid.textContent = `Humidity: ${weatherData.list[i].main.humidity}`;
+
+                card.append(cardBody);
+                cardBody.append(cityName, temp, wind, humid);
+                day6.innerHTML = "";
+                day6.append(card);
+            }
         }
-    }
+}
 
 }
 
